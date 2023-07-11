@@ -1,0 +1,1 @@
+INSERT INTO [dbo].[Orders] ([OrderTitle] ,[OrderQuantity] ,[Remarks] ,[Status] ,[OrderDate],[OrderDeliveryDate],[CreateDate],[ModifyDate]) VALUES (@orderTitle, @orderQuantity,@remarks, @status ,@orderDate, @orderDeliveryDate, @createDate, @modifyDate); SELECT SCOPE_IDENTITY() AS OrderId ;

@@ -1,0 +1,1 @@
+SELECT [OrderId] ,[OrderTitle] ,[OrderQuantity] ,[Remarks] ,[Status] ,CONVERT(VARCHAR, [OrderDate], 103) AS [OrderDate],CONVERT(VARCHAR, [OrderDeliveryDate], 103) AS [OrderDeliveryDate],CONVERT(VARCHAR, [CreateDate], 103) AS [CreateDate],CONVERT(VARCHAR, [ModifyDate], 103) AS [ModifyDate] FROM [dbo].[Orders] 
