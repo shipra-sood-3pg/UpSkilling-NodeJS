@@ -7,7 +7,7 @@ console.log("\n" + currDate);
 let dateOfBirth = new Date("May 10, 2018");
 console.log("\n", dateOfBirth);
 
-let dateOfBirth1 = new Date(2012, 11, 01, 17, 40, 0)
+let dateOfBirth1 = new Date(2012, 11, 1, 17, 40, 0)
 console.log("\n", dateOfBirth1);
 
 //Accessing elements from a date
@@ -43,3 +43,14 @@ console.log(`
 //custom date string
 let options = { dateStyle: "short", timeStyle: "short"};
 console.log(`Custom Date format: ${date.toLocaleString('hi-IN', options)}`);
+
+function formatDate(userDate) {
+    let currDate = new Date(userDate);
+
+    let currMonth = currDate.getMonth();
+    let dayOfMonth = currDate.getDate();
+    console.log(currMonth);
+    console.log(dayOfMonth);
+    return `${currDate.getFullYear()}${(currMonth.toString().length == 1 ? '0' : '')}${currMonth}${currDate.getDate()}`;
+}
+console.log(formatDate("4/31/2014"))

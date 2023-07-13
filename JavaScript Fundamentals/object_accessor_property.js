@@ -21,10 +21,10 @@ function User(name, surname, birthday) {
         }
     });
 }
-let user1 = new User("Shinav", "Shah", new Date(2018, 5, 10));
+let user1 = new User("Shinav", "Shah", new Date(2018, 4, 10));
 console.log(`User1 Details: \n\t Name: ${user1.name} \n\t Surname: ${user1.surname} \n\t FullName: ${user1.fullname} \n\t Age: ${user1.age} \n\t Birthday: ${user1.birthday}`);
 console.log(`\n`);
 let user2 = new User()
-user2.birthday = new Date(2012, 12, 01);
+user2.birthday = new Date(2012, 11, 1);
 user2.fullname = "Kshitij Shah";
 console.log(`User2 Details: \n\t Name: ${user2.name} \n\t Surname: ${user2.surname} \n\t FullName: ${user2.fullname} \n\t Age: ${user2.age} \n\t Birthday: ${user2.birthday}`);

@@ -1,38 +1,57 @@
 [
-    {
-        "id": 1,
-        "employeeName" : "Shipra Sood",
-        "email": "shipra.sood@testsite.com",
-        "dateOfJoining" : "2021-03-15",
-        "designation" : "SSE",
-        "department": "Software Development",
-        "isActive" : true
-    }
-    ,{
-        "id": 2,
-        "employeeName" : "Shinav Shah",
-        "email": "shinav.shah@testsite.com",
-        "dateOfJoining" : "2021-05-10",
-        "designation" : "SE1",
-        "department": "HR",
-        "isActive" : true
-    }
-    ,{
-        "id": 3,
-        "employeeName" : "Kshitij Shah",
-        "email": "kshitij.shah@testsite.com",
-        "dateOfJoining" : "2022-12-01",
-        "designation" : "SE2",
-        "department": "Software Development",
-        "isActive" : true
-    }
-    ,{
-        "id": 4,
-        "employeeName" : "Pranav Shah",
-        "email": "pranav.shah@testsite.com",
-        "dateOfJoining" : "2022-12-01",
-        "designation" : "SE2",
-        "department": "Dev Ops",
-        "isActive" : true
-    }
+  {
+    "id": 1,
+    "employeeName": "Shipra Sood",
+    "email": "shipra.sood@testsite.com",
+    "dateOfJoining": "2021-03-15",
+    "designation": "SSE",
+    "department": "Software Development",
+    "salaryGBP": 1700,
+    "localCurrency": "INR",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "employeeName": "Shinav Shah",
+    "email": "shinav.shah@testsite.com",
+    "dateOfJoining": "2021-05-10",
+    "designation": "SE1",
+    "department": "HR",
+    "salaryGBP": 1500,
+    "localCurrency": "INR",
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "employeeName": "Kshitij Shah",
+    "email": "kshitij.shah@testsite.com",
+    "dateOfJoining": "2022-12-01",
+    "designation": "SE2",
+    "department": "Software Development",
+    "salaryGBP": 1500,
+    "localCurrency": "INR",
+    "isActive": true
+  },
+  {
+    "id": 4,
+    "employeeName": "Pranav Shah",
+    "email": "pranav.shah@testsite.com",
+    "dateOfJoining": "2022-12-01",
+    "designation": "SE2",
+    "department": "Dev Ops",
+    "salaryGBP": 2100,
+    "localCurrency": "INR",
+    "isActive": true
+  },
+  {
+    "id": 5,
+    "employeeName": "Nishant",
+    "email": "nishant@testsite.com",
+    "designation": "HR Manager",
+    "department": "HR",
+    "isActive": true,
+    "dateOfJoining": "2015-03-19T18:30:00.000Z",
+    "salaryGBP": "10000",
+    "localCurrency": "INR"
+  }
 ]
