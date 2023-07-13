@@ -1,76 +1,31 @@
 //import sample data
+import { loadDataFromFile, writeDataToFile } from './demo_app_modules/data.js';
+import { getCurrencyConversionDetails, getSalary } from './demo_app_modules/currency.js'
+import chalk from 'chalk';
 
-import fs from 'node:fs/promises';
 import createPrompt from 'prompt-sync';
 
 //Global variables
 let employees = [];
 let currencyConversionData;
 
-//Fetch Currency Data
-const getCurrencyConversionDetails = async () => {
-    const headers = new Headers();
-
-    const requestOptions = {
-        method: 'GET',
-        headers,
-        redirect: 'follow'
-    }
-
-    const response = await fetch("http://api.exchangeratesapi.io/v1/latest?access_key=e22c89ebd4b386efb75660d1819e9c82&symbols=INR,USD,CAD,JPY", requestOptions);
-
-    if (!response.ok){
-        throw new Error("Cannot fetch currency data conversion rates.");
-    }
-    currencyConversionData = await response.json();
-}
-
-const getSalary = (amountGBP, currency) => {
-    let amount = (currency === "GBP") ? amountGBP : amountGBP * currencyConversionData.rates[currency];
-
-    const formatter = Intl.NumberFormat('en-GB', {
-                        style: 'currency', 
-                        currency:'INR'
-                    });
-    return formatter.format(amount);
-}
-
-//Reading a file and writing data to the file system
-const loadDataFromFile = async () => {
-    console.log("Loading Employees...");
-    try{
-        const data = await fs.readFile('./data/employeeData.json', 'utf8');
-        employees = JSON.parse(data);
-    }
-    catch{
-        console.log("Error reading / parsing the employee file");
-        throw err;
-    }
-}
-
-//Reading a file and writing data to the file system
-const writeDataToFile = async () => {
-    console.log("Saving Employees...");
-    try{
-        await fs.writeFile('./data/employeeData.json', JSON.stringify(employees, null, 2));
-    }
-    catch{
-        console.log("Error while saving data to the employee file");
-        throw err;
-    }
-}
 
 //Sample Usage
 let prompt = createPrompt();
 
 const logEmployee = (employee) => {
+
+    console.log('------------------------------------------------------------');
+    console.log('');
     Object.entries(employee).forEach(entry => {
         if (entry[0] !== "salaryGBP" || entry[0] !== "localCurrency"){
-            console.log(`${entry[0]}: ${entry[1]}`);
+            console.log(`${chalk.green.bold(entry[0])}: ${chalk.gray.bold(entry[1])}`);
         }
     });
-    console.log(`Salary (GBP): ${getSalary(employee.salaryGBP, "GBP")}`);
-    console.log(`Local Currency (${employee.localCurrency}): ${getSalary(employee.salaryGBP, employee.localCurrency)}`);
+    console.log(`${chalk.green.bold('Salary (GBP)')}: ${chalk.gray.bold(getSalary(employee.salaryGBP, "GBP", currencyConversionData))}`);
+    console.log(`${chalk.green.bold('Local Currency (')} ${chalk.green.bold(employee.localCurrency)})')}: ${chalk.gray.bold(getSalary(employee.salaryGBP, employee.localCurrency, currencyConversionData))}`);
+    console.log('');
+    console.log('------------------------------------------------------------');
 }
 
 // function: to read value from the cli
@@ -149,7 +104,7 @@ const addNewEmployee = async () => {
         employee.localCurrency = getInput("Local currency (3 letter code): ", isCurrencyCodeValid);
 
         employees.push(employee);
-        await writeDataToFile();
+        await writeDataToFile(employees);
 }
 
 //search for employee by id
@@ -214,9 +169,12 @@ const main = async () =>{
 }
 
 Promise.all([ loadDataFromFile(), getCurrencyConversionDetails() ])
-    .then(main)
+    .then(results => {
+        employees = results[0];
+        currencyConversionData = results[1];
+        return main();
+    })
     .catch((err) => {
       console.error("Cannot complete startup.");
       throw err;
     });
-  
