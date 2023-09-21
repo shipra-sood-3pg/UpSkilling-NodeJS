@@ -1,0 +1,42 @@
+<div class='card'>
+    <div class='card-header'>
+        {{pageTitle}}
+    </div>
+    <div class='card-body'>
+        <div class='row'>
+            <div class="col-md-2">Filter by:</div>
+            <div class="col-md-4">
+                <input type="text" [(ngModel)] = 'filterCriteria' />
+            </div>
+        </div>
+        <div class='row' *ngIf="isDataFiltered()">
+            <div class="col-md-6">
+                <p>Filtered by: {{filterCriteria}}</p>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table" *ngIf="courses.length">
+                <thead>
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Course Name</th>
+                        <th>Course Credits</th>
+                        <th>Duration</th>
+                        <th>Course Fee</th>
+                        <th>Complexity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let course of filteredCourses">
+                        <td>{{course.courseCode | uppercase | replaceByCharacter: '-':' ' }}</td>
+                        <td>{{course.courseName}}</td>
+                        <td>{{course.credits}}</td>
+                        <td>{{course.duration}}</td>
+                        <td>{{course.fee | currency:'INR':'symbol':'1.2-2'}}</td>
+                        <td><module-star [complexity]="course.complexity" (complexityClicked)="onComplexityClicked($event)"></module-star></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

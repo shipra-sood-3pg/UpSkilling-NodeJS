@@ -1,0 +1,2 @@
+This is a sample document read using read/write files functionality of nodejs. 
+ undefined

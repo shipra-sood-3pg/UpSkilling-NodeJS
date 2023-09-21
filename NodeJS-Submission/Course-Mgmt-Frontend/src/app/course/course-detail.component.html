@@ -1,0 +1,70 @@
+<div class='card'>
+    <div class='card-header d-flex'>
+        <div class="col-md-4">
+            {{pageTitle}}
+        </div>
+        <div class="col-md-8 actionButtonDiv">
+            <button class='btn btn-primary actionbutton'
+                    style='width:95px' (click)='addCourseButtonClick()'>
+                <i class='fa fa-plus-square'></i> New
+            </button>
+            <button class='btn btn-primary actionbutton'
+                    style='width:95px' (click)='saveCourseButtonClick()'>
+                <i class='fa fa-save'></i> Save
+            </button>
+            <button class='btn btn-outline-secondary actionbutton'
+                    style='width:95px' (click)='resetCourseDetailsButtonClick()'>
+                <i class='fa fa-undo'></i> Cancel
+            </button>
+            <button class='btn btn-outline-secondary actionbutton'
+                    style='width:95px' (click)='onBackButtonClick()'>
+                <i class='fa fa-chevron-left'></i> Back
+            </button>
+        </div>
+    </div>
+    
+    <div class='card-body' *ngIf='course'>
+        <div class='row formRowWithBottomMargin'>            
+            <div class="form-group">
+                <label class="form-label" for="txtCourseName">Course Name:</label>
+                <input class="form-control" id="txtCourseName" type="text" [(ngModel)] = 'course.courseName' />
+            </div>
+        </div>
+          <div class='row formRowWithBottomMargin'>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="form-label" for="txtCourseCode">Course Code:</label>
+                    <input class="form-control" id="txtCourseCode" type="text" [(ngModel)] = 'course.courseCode' />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="form-label" for="txtCourseDuration">Duration:</label>
+                    <input class="form-control" id="txtCourseDuration" type="text" [(ngModel)] = 'course.duration' />
+                </div>
+            </div>
+          </div>
+          <div class='row formRowWithBottomMargin'>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="form-label" for="txtCourseFee">Fee:</label>
+                    <input class="form-control" id="txtCourseFee" type="text" [(ngModel)] = 'course.fee' />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="form-label" for="txtCourseCredits">Credits:</label>
+                    <input class="form-control" id="txtCourseCredits" type="text" [(ngModel)] = 'course.credits' />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="form-label" for="txtCourseComplexity">Complexity:</label>
+                    <input class="form-control" id="txtCourseComplexity" type="text" [(ngModel)] = 'course.complexity' />
+                </div>
+            </div>
+          </div>
+    </div>
+
+    
+</div>

@@ -1,0 +1,38 @@
+.navbar-brand {
+    background: linear-gradient(0deg, rgba(25, 135, 84, 0.20), rgba(25, 135, 84, 0.20));
+    color: #198754;
+    font-weight: 600;
+}
+
+.navbar-brand:hover, .navbar-brand:visited {
+    background: linear-gradient(0deg, rgba(25, 135, 84, 0.25), rgba(25, 135, 84, 0.25));
+    color: #198754;
+    font-weight: 600;
+}
+
+.custom-nav-bar-brand {
+    padding: 5px 10px;
+    margin-top: 0px;
+}
+
+.navbar-container {
+    padding: 0;
+    background: linear-gradient(0deg, rgba(25, 135, 84, 0.075), rgba(25, 135, 84, 0.075)); 
+}
+
+.nav-link {
+    color: #198754;
+    padding: 4px 8px;
+    margin-top: 0px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #198754;
+    padding: 4px 8px;
+}
+
+.container {
+    padding: 0;
+    margin-top: 10px;
+}

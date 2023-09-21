@@ -1,0 +1,30 @@
+thead
+{
+    padding-top: 20px !important;
+    color: #0b4008;
+}
+
+table {
+    margin-top: 10px;
+}
+
+.card-header {
+    background: linear-gradient(0deg, rgba(25, 135, 84, 0.09), rgba(25, 135, 84, 0.09));
+    color: #198754;
+    font-weight: 600;
+    font-size: 17.5px;
+}
+
+.filterLabel {
+    line-height: 40px;
+    font-weight: 700;
+    width: 100px;
+}
+
+.filterTextBox {
+    line-height: 20px;
+}
+
+a {
+    color: #198754;
+}

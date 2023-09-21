@@ -1,0 +1,38 @@
+.actionbutton {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 4px 8px;
+    width: 95px;
+}
+
+.card-header {
+    background: linear-gradient(0deg, rgba(25, 135, 84, 0.09), rgba(25, 135, 84, 0.09));
+    color: #198754;
+    font-weight: 600;
+    font-size: 17.5px;
+}
+
+
+.actionButtonDiv {
+    padding-left: 140px;
+}
+
+.formRowWithBottomMargin {
+    margin-bottom: 10px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.btn-outline-secondary:focus, .btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "courseCode" : "cnet-001",
+        "courseName" : "Networking",
+        "credits" : 5,
+        "duration" : "4 weeks",
+        "fee" : 23.98,
+        "complexity" : 5
+    },
+    {
+        "courseCode" : "sd-022",
+        "courseName" : "Software Design",
+        "credits" : 8,
+        "duration" : "12 weeks",
+        "fee" : 43.44,
+        "complexity" : 3
+    },
+    {
+        "courseCode" : "ds-012",
+        "courseName" : "Data Structures",
+        "credits" : 4,
+        "duration" : "8 weeks",
+        "fee" : 10.44,
+        "complexity" : 4.5
+    }
+]
